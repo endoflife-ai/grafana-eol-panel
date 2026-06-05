@@ -1,0 +1,13 @@
+{
+  "name": "endoflife-ai-eol-panel",
+  "version": "1.0.0",
+  "description": "EOL Risk Score panel for Grafana — powered by endoflife.ai",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "dev": "grafana-toolkit plugin:dev"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@grafana/toolkit": "latest"
+  }
+}

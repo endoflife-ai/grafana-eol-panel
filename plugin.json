@@ -1,0 +1,38 @@
+{
+  "type": "panel",
+  "name": "EOL Risk Score",
+  "id": "endoflife-ai-eol-panel",
+  "info": {
+    "description": "Display end-of-life risk scores for your software stack. Powered by endoflife.ai — free EOL intelligence for 455+ products.",
+    "author": {
+      "name": "endoflife.ai",
+      "url": "https://endoflife.ai"
+    },
+    "keywords": ["eol", "end-of-life", "security", "devops", "risk", "lifecycle"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "endoflife.ai",
+        "url": "https://endoflife.ai"
+      },
+      {
+        "name": "API Documentation",
+        "url": "https://endoflife.ai/api"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/endoflife-ai/grafana-eol-panel"
+      }
+    ],
+    "version": "1.0.0",
+    "updated": "2026-06-04"
+  },
+  "dependencies": {
+    "grafanaVersion": "9.0.0",
+    "grafanaDependency": ">=9.0.0",
+    "plugins": []
+  }
+}
