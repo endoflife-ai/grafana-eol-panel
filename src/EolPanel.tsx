@@ -8,11 +8,11 @@ interface Props extends PanelProps<EolPanelOptions> {}
 
 async function fetchStatus(slug: string, version: string, apiKey: string): Promise<EolStatus> {
   const headers: Record<string, string> = { 'User-Agent': 'grafana-eol-panel/1.0' };
-  if (apiKey) headers['X-API-Key'] = apiKey;
+  if (apiKey) { headers['X-API-Key'] = apiKey; }
 
   try {
     const res = await fetch(`${API_BASE}/status/${slug}/${version}`, { headers });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) { throw new Error(`HTTP ${res.status}`); }
     const data = await res.json();
     const days = data.days_until_eol ?? (data.days_past_eol ? -data.days_past_eol : null);
     const status = data.is_eol ? 'eol' : (days !== null && days <= 90 ? 'warn' : 'active');
@@ -62,16 +62,16 @@ export const EolPanel: React.FC<Props> = ({ options, width, height }) => {
   }, [options.products, options.apiKey]);
 
   const statusColor = (status: EolStatus['status']) => {
-    if (status === 'eol') return '#f87171';
-    if (status === 'warn') return '#fbbf24';
-    if (status === 'active') return '#4ade80';
+    if (status === 'eol') { return '#f87171'; }
+    if (status === 'warn') { return '#fbbf24'; }
+    if (status === 'active') { return '#4ade80'; }
     return '#94a3b8';
   };
 
   const statusLabel = (r: EolStatus) => {
-    if (r.status === 'eol') return `EOL${r.days_past_eol ? ` — ${r.days_past_eol}d past` : ''}`;
-    if (r.status === 'warn') return `Warning${r.days_until_eol ? ` — ${r.days_until_eol}d` : ''}`;
-    if (r.status === 'active') return 'Supported';
+    if (r.status === 'eol') { return `EOL${r.days_past_eol ? ` — ${r.days_past_eol}d past` : ''}`; }
+    if (r.status === 'warn') { return `Warning${r.days_until_eol ? ` — ${r.days_until_eol}d` : ''}`; }
+    if (r.status === 'active') { return 'Supported'; }
     return 'Unknown';
   };
 
