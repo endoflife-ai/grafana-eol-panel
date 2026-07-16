@@ -1,9 +1,9 @@
 import { PanelPlugin } from '@grafana/data';
-import { EolPanel } from './EolPanel';
 import { EolPanelOptions } from './types';
+import { EolPanel } from './components/EolPanel';
 
-export const plugin = new PanelPlugin<EolPanelOptions>(EolPanel).setPanelOptions(builder => {
-  builder
+export const plugin = new PanelPlugin<EolPanelOptions>(EolPanel).setPanelOptions((builder) => {
+  return builder
     .addTextInput({
       path: 'products',
       name: 'Products to monitor',
