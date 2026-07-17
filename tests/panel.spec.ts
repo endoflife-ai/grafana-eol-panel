@@ -5,8 +5,9 @@ test('should render the endoflife.ai header when added to a dashboard', async ({
   await expect(panelEditPage.panel.locator).toContainText('endoflife.ai');
 });
 
-test('should expose the products option in the panel editor', async ({ panelEditPage }) => {
-  await panelEditPage.setVisualization('EOL Risk Score');
+test('should expose the products option in the panel editor', async ({ gotoPanelEditPage, readProvisionedDashboard }) => {
+  const dashboard = await readProvisionedDashboard({ fileName: 'dashboard.json' });
+  const panelEditPage = await gotoPanelEditPage({ dashboard, id: '1' });
   const options = panelEditPage.getCustomOptions('EOL Risk Score');
   await expect(options.getTextInput('Products to monitor').locator()).toBeVisible();
 });
