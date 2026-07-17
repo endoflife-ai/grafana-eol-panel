@@ -9,5 +9,5 @@ test('should expose the products option in the panel editor', async ({ gotoPanel
   const dashboard = await readProvisionedDashboard({ fileName: 'dashboard.json' });
   const panelEditPage = await gotoPanelEditPage({ dashboard, id: '1' });
   const options = panelEditPage.getCustomOptions('EOL Risk Score');
-  await expect(options.getTextInput('Products to monitor').locator()).toBeVisible();
+  await expect(options.getTextInput('Products to monitor')).toBeVisible();
 });
