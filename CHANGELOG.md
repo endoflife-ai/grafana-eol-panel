@@ -1,3 +1,8 @@
+# 1.1.1 (2026-08-05)
+
+- Security: update transitive dependencies flagged by OSV — fast-uri 3.1.5 (CVE-2026-18446, CVE-2026-16221), ip-address 10.3.1 (CVE-2026-69192); npm audit fix for brace-expansion advisories
+- No functional changes to the panel
+
 # Changelog
 
 ## 1.1.0 (2026-07-16)
