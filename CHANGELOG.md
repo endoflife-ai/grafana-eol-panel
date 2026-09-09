@@ -2,6 +2,7 @@
 
 - Tests: e2e suite runs green on Grafana 12.3 through 13.2 and nightly again (`@grafana/plugin-e2e` 3.12.0; the render test loads the panel from the provisioned dashboard instead of the visualization picker, which left the panel unselected on Grafana 12.4 with the newer harness).
 - Docs: product coverage wording updated to 500+ products (README, plugin description).
+- Security: transitive dependencies flagged high by OSV moved to patched releases via npm overrides - browserslist 4.28.9 (CVE-2026-73088, CVE-2026-73089), fast-uri 3.1.7 (CVE-2026-75899, CVE-2026-75931, CVE-2026-75975, CVE-2026-76172), js-yaml 4.3.2 (CVE-2026-84375), nanoid 3.3.18 (CVE-2026-67213).
 - No functional changes to the panel.
 
 # 1.1.1 (2026-08-05)
