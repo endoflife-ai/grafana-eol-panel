@@ -2,7 +2,7 @@
 
 **See the end-of-life status of your software stack directly in your Grafana dashboards.**
 
-Powered by [endoflife.ai](https://endoflife.ai) — free EOL intelligence for 480+ products.
+Powered by [endoflife.ai](https://endoflife.ai) — free EOL intelligence for 500+ products.
 
 ## What it does
 
@@ -34,7 +34,7 @@ kubernetes:1.26   Kubernetes 1.26
 rhel:8            Red Hat Enterprise Linux 8
 ```
 
-Browse all 480+ products and their slugs at [endoflife.ai/products](https://endoflife.ai/products).
+Browse all 500+ products and their slugs at [endoflife.ai/products](https://endoflife.ai/products).
 
 ## API and rate limits
 
@@ -44,7 +44,7 @@ Anonymous use: 100 requests/day per IP. A free key raises that to 500 requests/d
 
 ## REST API
 
-Everything this panel shows is also available as a REST API — EOL dates and EOL Risk Scores for 480+ products, with an [OpenAPI 3.0 spec](https://api.endoflife.ai/openapi.json) you can import into Postman, Insomnia, or your code generator.
+Everything this panel shows is also available as a REST API — EOL dates and EOL Risk Scores for 500+ products, with an [OpenAPI 3.0 spec](https://api.endoflife.ai/openapi.json) you can import into Postman, Insomnia, or your code generator.
 
 ```bash
 curl https://api.endoflife.ai/v1/score/python/3.11
