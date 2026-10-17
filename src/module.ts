@@ -12,8 +12,8 @@ export const plugin = new PanelPlugin<EolPanelOptions>(EolPanel).setPanelOptions
     })
     .addTextInput({
       path: 'apiKey',
-      name: 'endoflife.ai API key (optional)',
-      description: 'Pro API key for higher rate limits. Leave blank for free tier (100 req/day).',
+      name: 'endoflife.ai API key',
+      description: 'Required from 2026-11-16, when the API stops answering requests without a key (until then blank = anonymous, 50 req/day per IP). Free key: https://endoflife.ai/api#free-key. Anyone who can view this dashboard can read the key.',
       defaultValue: '',
     })
     .addBooleanSwitch({

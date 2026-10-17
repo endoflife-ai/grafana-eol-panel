@@ -17,7 +17,7 @@ In the panel options:
 | Option               | Description                          | Default                                          |
 | -------------------- | ------------------------------------ | ------------------------------------------------ |
 | Products to monitor  | Comma-separated `slug:version` pairs | Node.js 18, Python 3.11, PHP 8.1, Ubuntu 20.04   |
-| API key              | endoflife.ai Pro API key (optional)  | —                                                |
+| API key              | endoflife.ai API key (required from 2026-11-16) | —                                                |
 | Show EOL Risk Score  | Display score card link              | `true`                                           |
 | Show EOL date        | Display the EOL date column          | `true`                                           |
 | Highlight EOL in red | Red left border on rows past EOL     | `true`                                           |
@@ -38,7 +38,7 @@ Browse all 500+ products and their slugs at [endoflife.ai/products](https://endo
 
 ## API and rate limits
 
-Anonymous use: 100 requests/day per IP. A free key raises that to 500 requests/day — get one instantly at [endoflife.ai/api](https://endoflife.ai/api). For teams with many products or frequent refreshes, paid tiers start at $79/mo.
+An API key is required from November 16, 2026 at 00:00 UTC, when the API stops answering requests without one; until then anonymous use allows 50 requests/day per IP. A free evaluation key gives 150 requests/day for 30 days, emailed at once from [endoflife.ai/api](https://endoflife.ai/api#free-key). Paid keys: Starter (USD 89 a month, 10,000 requests/day) and Pro (USD 199 a month, unlimited). The key is stored in the panel options, so anyone who can view the dashboard can read it.
 
 [Get an API key →](https://endoflife.ai/api)
 
