@@ -38,7 +38,7 @@ Browse all 500+ products and their slugs at [endoflife.ai/products](https://endo
 
 ## API and rate limits
 
-An API key is required from November 16, 2026 at 00:00 UTC, when the API stops answering requests without one; until then anonymous use allows 50 requests/day per IP. A free evaluation key gives 150 requests/day for 30 days, emailed at once from [endoflife.ai/api](https://endoflife.ai/api#free-key). Paid keys: Starter (USD 89 a month, 10,000 requests/day) and Pro (USD 199 a month, unlimited). The key is stored in the panel options, so anyone who can view the dashboard can read it.
+An API key is required from November 16, 2026 at 00:00 UTC, when the API stops answering requests without one; until then anonymous use allows 50 requests/day per IP. A free key gives 150 requests/day with no expiry, emailed at once from [endoflife.ai/api](https://endoflife.ai/api#free-key). Paid keys: Starter (USD 89 a month, 10,000 requests/day) and Pro (USD 199 a month, unlimited). The key is stored in the panel options, so anyone who can view the dashboard can read it.
 
 [Get an API key →](https://endoflife.ai/api)
 
