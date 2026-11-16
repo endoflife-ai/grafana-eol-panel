@@ -4,6 +4,8 @@
 
 Powered by [endoflife.ai](https://endoflife.ai) — free EOL intelligence for 700+ products.
 
+The panel needs an endoflife.ai API key. A free key (150 requests a day, no expiry) is emailed at once from [endoflife.ai/api](https://endoflife.ai/api#free-key).
+
 The user-facing plugin documentation lives in [src/README.md](src/README.md) (this is the README shipped with the plugin and shown on Grafana.com).
 
 Build and development instructions are in [DEVELOPMENT.md](DEVELOPMENT.md).

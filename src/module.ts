@@ -1,4 +1,5 @@
 import { PanelPlugin } from '@grafana/data';
+import { API_KEY_OPTION_NAME, FREE_KEY_URL } from './constants';
 import { EolPanelOptions } from './types';
 import { EolPanel } from './components/EolPanel';
 
@@ -12,8 +13,8 @@ export const plugin = new PanelPlugin<EolPanelOptions>(EolPanel).setPanelOptions
     })
     .addTextInput({
       path: 'apiKey',
-      name: 'endoflife.ai API key',
-      description: 'Required from 2026-11-16, when the API stops answering requests without a key (until then blank = anonymous, 50 req/day per IP). Free key: https://endoflife.ai/api#free-key. Anyone who can view this dashboard can read the key.',
+      name: API_KEY_OPTION_NAME,
+      description: `Required. The endoflife.ai API refuses requests without a key. A free key gives 150 requests a day and does not expire: ${FREE_KEY_URL}. Anyone who can view this dashboard can read the key.`,
       defaultValue: '',
     })
     .addBooleanSwitch({

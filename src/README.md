@@ -17,7 +17,7 @@ In the panel options:
 | Option               | Description                          | Default                                          |
 | -------------------- | ------------------------------------ | ------------------------------------------------ |
 | Products to monitor  | Comma-separated `slug:version` pairs | Node.js 18, Python 3.11, PHP 8.1, Ubuntu 20.04   |
-| API key              | endoflife.ai API key (required from 2026-11-16) | —                                                |
+| endoflife.ai API key | Required. The panel shows no results without it | —                                                |
 | Show EOL Risk Score  | Display score card link              | `true`                                           |
 | Show EOL date        | Display the EOL date column          | `true`                                           |
 | Highlight EOL in red | Red left border on rows past EOL     | `true`                                           |
@@ -38,16 +38,30 @@ Browse all 700+ products and their slugs at [endoflife.ai/products](https://endo
 
 ## API and rate limits
 
-An API key is required from November 16, 2026 at 00:00 UTC, when the API stops answering requests without one; until then anonymous use allows 50 requests/day per IP. A free key gives 150 requests/day with no expiry, emailed at once from [endoflife.ai/api](https://endoflife.ai/api#free-key). Paid keys: Starter (USD 89 a month, 10,000 requests/day) and Pro (USD 199 a month, unlimited). The key is stored in the panel options, so anyone who can view the dashboard can read it.
+An API key is required. The endoflife.ai API refuses requests without one, and the panel shows a message instead of results until a key is set. A free key gives 150 requests/day and does not expire. It is emailed at once from [endoflife.ai/api](https://endoflife.ai/api#free-key). Paid keys: Starter (USD 89 a month, 10,000 requests/day) and Pro (USD 299 a month, 100,000 requests/day, fair use).
+
+The panel sends one request per product each time it loads, and again every hour while it stays open.
+
+The key is stored in the panel options, so anyone who can view the dashboard can read it.
 
 [Get an API key →](https://endoflife.ai/api)
+
+## Messages
+
+| The panel shows           | Meaning                                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| `API key needed`          | The API key option is empty. The panel does not call the API.                                |
+| `API key not accepted`    | The API refused the key (unknown or deactivated). Check the value.                           |
+| `Daily limit reached`     | The key has used its requests for today. The count resets at 00:00 UTC.                      |
+| `Not tracked` (on a row)  | endoflife.ai does not track that product or version. Check the slug.                         |
+| `Check failed` (on a row) | The request did not complete. The reason follows, and the panel tries again within the hour. |
 
 ## REST API
 
 Everything this panel shows is also available as a REST API — EOL dates and EOL Risk Scores for 700+ products, with an [OpenAPI 3.0 spec](https://api.endoflife.ai/openapi.json) you can import into Postman, Insomnia, or your code generator.
 
 ```bash
-curl https://api.endoflife.ai/v1/score/python/3.11
+curl -H "X-API-Key: your_key" https://api.endoflife.ai/v1/score/python/3.11
 ```
 
 Full documentation: [endoflife.ai/api](https://endoflife.ai/api)
