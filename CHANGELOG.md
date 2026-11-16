@@ -1,3 +1,9 @@
+# 1.1.4 (2026-11-16)
+
+First released build of the 1.1.3 changes below (1.1.3 was tagged but its release build stopped at the dependency scan).
+
+- Dependencies: build-time packages basic-ftp (6.2.6) and source-map-js (1.2.2) moved to fixed versions by override. Neither ships in the plugin.
+
 # 1.1.3 (2026-11-16)
 
 The endoflife.ai API has required a key since 2026-11-16 00:00 UTC. Until this release a panel without a key showed a grey "Unknown" on every row and no explanation.
